@@ -3,8 +3,8 @@ package com.example.wm.interfaces;
 public interface calculations {
     int initialCostCalculation(int volume, int r1, int r2);
     int slabCostCalculation(int volume);
-    int initialVolumeCalculation(int type );
-    int slabVolumeCalculation(int guests);
-    int totalCostCalculation(int initialCost,int slabCost);
-
+    int memberVolumeCalculation(int guests);
+    int initialVolumeCalculation(boolean is2BHK);
+    int totalVolumeCalculation(boolean is2BHK, int totalGuests);
+    int totalCostCalculation(boolean is2BHK, int totalGuests, int r1, int r2);
 }

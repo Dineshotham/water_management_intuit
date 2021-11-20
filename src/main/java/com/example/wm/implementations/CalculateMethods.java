@@ -28,17 +28,31 @@ public class CalculateMethods implements calculations {
         }
     }
     @Override
-    public int initialVolumeCalculation(int type ){
-        return 0;
-    }
-    @Override
-    public int slabVolumeCalculation(int guests){
-        return 0;
+    public int initialVolumeCalculation(boolean is2BHK) {
+        if(is2BHK)
+            return memberVolumeCalculation(3);// 2BHK default members 3
+        else
+            return memberVolumeCalculation(5);// 3BHK default members 5
     }
 
     @Override
-    public int totalCostCalculation(int initialCost, int slabCost) {
-        return 0;
+    public int memberVolumeCalculation(int totalMembers){
+        return totalMembers*300;//totalGuests * 10L * 30 days
+    }
+    @Override
+    public int totalVolumeCalculation(boolean is2BHK, int totalGuests){
+        int initialVolumeCalculation = initialVolumeCalculation(is2BHK);
+        int guestVolumeCalculation = memberVolumeCalculation(totalGuests);
+        return initialVolumeCalculation+guestVolumeCalculation;
+    }
+
+    @Override
+    public int totalCostCalculation(boolean is2BHK, int totalGuests, int r1, int r2) {
+        int initialVolumeCalculation = initialVolumeCalculation(is2BHK);
+        int guestVolumeCalculation = memberVolumeCalculation(totalGuests);
+        int allottedCostCalculation = initialCostCalculation(initialVolumeCalculation,r1,r2);
+        int tankerCostCalculation = slabCostCalculation(guestVolumeCalculation);
+        return allottedCostCalculation+ tankerCostCalculation;
     }
 
 }
