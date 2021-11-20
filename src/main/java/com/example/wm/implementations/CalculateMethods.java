@@ -14,7 +14,18 @@ public class CalculateMethods implements calculations {
 
     @Override
     public int slabCostCalculation(int volume) {
-        return 0;
+        if(volume<=500){
+            return volume*2;
+        }
+        else if(volume<=1500){
+            return 500 *2 + (volume-500)*3;
+        }
+        else if(volume<=3000){
+            return 500*2+ 1000*3 + (volume-1500)*5;
+        }
+        else{
+            return 500*2+1000*3+1500*5+(volume-3000)*8;
+        }
     }
     @Override
     public int initialVolumeCalculation(int type ){

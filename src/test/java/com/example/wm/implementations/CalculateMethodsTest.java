@@ -18,4 +18,9 @@ public class CalculateMethodsTest {
     void initialCostCalculation() {
         assertEquals(calculateMethods.initialCostCalculation(1500,1,5),2125);
     }
+
+    @Test
+    void slabCostCalculation(){
+        assertEquals(calculateMethods.slabCostCalculation(3000),11500);
+    }
 }
