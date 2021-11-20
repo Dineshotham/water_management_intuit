@@ -22,7 +22,7 @@ public class CalculateMethods implements calculations {
     }
 
     @Override
-    public int totalCostCalculation(int intitalCost, int slabCost) {
+    public int totalCostCalculation(int initialCost, int slabCost) {
         return 0;
     }
 

@@ -5,6 +5,6 @@ public interface calculations {
     int slabCostCalculation(int volume);
     int initialVolumeCalculation(int type );
     int slabVolumeCalculation(int guests);
-    int totalCostCalculation(int intitalCost,int slabCost);
+    int totalCostCalculation(int initialCost,int slabCost);
 
 }
